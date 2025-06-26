@@ -201,10 +201,12 @@ def main(file_arg):
                                     if decryptfile2(key, os.path.join(temp,"out"), os.path.join(temp,"out")+".dec") == 1:
                                         return 1
                                     WzipObj.write(os.path.join(temp,"out")+".dec", orgfilename)
+                                    rr.close()
                                     os.remove(os.path.join(temp,"out"))
                                     os.remove(os.path.join(temp,"out")+".dec")
                                 else:
                                     WzipObj.write(os.path.join(temp,"out"), orgfilename)
+                                    rr.close()
                                     os.remove(os.path.join(temp,"out"))
                     rmrf(temp)
                     print("DONE... file decrypted to: "+outzip)
